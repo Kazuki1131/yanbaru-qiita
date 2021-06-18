@@ -2,9 +2,6 @@
 
 @include('common.header')
 
-@section('css')
-    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
-@endsection
 @section('content')
 <div class="container">
     <!-- 5件ずつページネーションさせる -->
