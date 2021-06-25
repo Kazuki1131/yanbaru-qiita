@@ -1,0 +1,11 @@
+  .user-show dl {
+    margin-top: 30px;
+}
+.user-show dt {
+    text-align: right;
+    width: 110px;
+}
+.user-show dd {
+    width: 400px;
+    padding: 0 40px;
+}
