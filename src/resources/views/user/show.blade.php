@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class=container>
+<div class="container user-show-box01">
     <div class="card user-show w-50 mx-auto">
         <h3 class="card-header text-center py-4"><i class="fas fa-user-alt mr-2"></i>マイページ</h3>
         <div class="card-body pt-2 pb-5">
@@ -35,9 +35,9 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <div><i class="fas fa-user-edit mr-3"></i>投稿日時 : 2021-06-26</div>
-                <div class="ml-auto">
-                    <a href="#" class="px-2 btn btn-secondary" style="display:inline; border-radius:20px;">編集</a>
-                    <a href="#" class="px-2 btn btn-danger" style="display:inline; border-radius:20px;">削除</a>
+                <div class="ml-auto btn-box01">
+                    <a href="#" class="px-2 btn btn-secondary">編集</a>
+                    <a href="#" class="px-2 btn btn-danger">削除</a>
                 </div>
             </div>
         </div>
@@ -59,9 +59,9 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <div><i class="fas fa-user-edit mr-3"></i>投稿日時 : 2021-06-26</div>
-                <div class="ml-auto">
-                    <a href="#" class="px-2 btn btn-secondary" style="display:inline; border-radius:20px;">編集</a>
-                    <a href="#" class="px-2 btn btn-danger" style="display:inline; border-radius:20px;">削除</a>
+                <div class="ml-auto btn-box01">
+                    <a href="#" class="px-2 btn btn-secondary">編集</a>
+                    <a href="#" class="px-2 btn btn-danger">削除</a>
                 </div>
             </div>
         </div>
@@ -80,8 +80,5 @@
         </div>
     </div>
 </div>
-
-</div>
-
 
 @endsection

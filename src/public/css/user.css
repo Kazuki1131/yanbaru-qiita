@@ -1,11 +1,16 @@
-  .user-show dl {
+.user-show dl {
     margin-top: 30px;
 }
 .user-show dt {
     text-align: right;
-    width: 110px;
+    width: 200px;
 }
 .user-show dd {
-    width: 400px;
+    width: 300px;
     padding: 0 40px;
+}
+
+.user-show-box01 .btn-box01 a {
+    
+    border-radius:20px;
 }

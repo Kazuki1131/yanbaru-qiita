@@ -24,4 +24,4 @@ Route::get('/articles/create', function () {
 });
 
 
-Route::get('user', 'UserController@show');
+Route::get('user', 'UsersController@show');
