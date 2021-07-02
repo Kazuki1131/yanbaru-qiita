@@ -6,5 +6,9 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    //
+
+    public function create()
+    {
+        return view('articles.create');
+    }
 }

@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/articles/create', 'ArticlesController@create')->name('articles.create');
+
+Route::get('user', 'UsersController@show');
