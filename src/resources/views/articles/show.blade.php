@@ -35,13 +35,13 @@
             </dl>
             <dl class="row justify-content-center">
                 <dt>URL</dt>
-                <dd><a href="{{ $article->url }}" target="_blank">{{ $article->url }}</a></dd>
+                <dd><a href="{{ $article->url }}" target="_blank" rel="noopener">{{ $article->url }}</a></dd>
             </dl>
             <div class="row my-5 show-btn justify-content-center">
                 <a href="/" class="d-inline-block btn btn-secondary">戻る</a>
                 @auth
                     @if(Auth::id() === $article->user->id)
-                        <a href="#" class="d-inline-block btn btn-success"><i class="far fa-edit mr-1"></i></i>編集</a>
+                        <a href="#" class="d-inline-block btn btn-success"><i class="far fa-edit mr-1"></i>編集</a>
                         <a href="#" class="d-inline-block btn btn-danger"><i class="far fa-trash-alt mr-1"></i>削除</a>
                     @endif
                 @endauth

@@ -21,3 +21,17 @@
 .article-show .show-btn a:nth-child(n + 2) {
     margin-left: 15px;
 }
+
+@media only screen and (max-width: 960px) {
+    .article-show .card-body {
+        padding: 0 60px;
+    }
+    .article-show dt {
+        text-align: left;
+        width: 100%;
+    }
+    .article-show dd {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
