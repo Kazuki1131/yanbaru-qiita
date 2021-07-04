@@ -11,15 +11,17 @@
                     <div class="card-header p-2 h4">
                         <i class="fas fa-user-edit m-2 font-weight-bold"></i>
                         <p class="d-inline font-weight-bold">{{$article->user->name}}</p>
-                        <!-- 編集と削除ボタンはログイン時のみ表示させる -->
-                        <span class="float-right">
-                            <a href="#" class="btn btn-secondary rounded-pill">
-                                <i class="far fa-edit mr-1"></i>編集
-                            </a>
-                            <a href="#" class="btn btn-danger rounded-pill">
-                                <i class="far fa-trash-alt mr-1"></i>削除
-                            </a>
-                        </span>
+                        <!-- ログインしているユーザーのみ編集と削除ボタンを表示 -->
+                        @if($user == $article->user)
+                            <span class="float-right">
+                                <a href="#" class="btn btn-secondary rounded-pill">
+                                    <i class="far fa-edit mr-1"></i>編集
+                                </a>
+                                <a href="#" class="btn btn-danger rounded-pill">
+                                    <i class="far fa-trash-alt mr-1"></i>削除
+                                </a>
+                            </span>
+                        @endif
                     </div>
                     <div class="card-body h5">
                         <dl class="row mb-4">
@@ -32,7 +34,7 @@
                         </dl>
                         <dl class="row mb-4">
                             <dt class="col-4 text-right">URL</dt>
-                            <dd class="col-8"><a href="{{$article->url}}">{{$article->url}}</a></dd>
+                            <dd class="col-8"><a href="{{$article->url}}" target="_blank" rel="noopener">{{$article->url}}</a></dd>
                         </dl>
                         <dl class="row mb-4">
                             <dt class="col-4 text-right">投稿日時</dt>
