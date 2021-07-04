@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-
-@section('css')
-<link href="{{ asset('css/articles/edit.css') }}" rel="stylesheet">
-@endsection
-
 @include('common.header')
 @section('content')
 <div class="container">
