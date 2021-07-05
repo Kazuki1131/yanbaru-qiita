@@ -28,8 +28,8 @@
                             <p>カテゴリー<span class="text-danger">(※)</span></p>
                             <div class="form-check form-check-inline">
                                 @foreach ($categories as $id => $category)
-                                    <label class="form-check-label mr-1" for="category_{{ $id }}">{{ $category }}</label>
-                                    <input class="form-check-input  mr-5" id="category_{{ $id }}" type="radio" name="category_id" value="{{ $id }}"  {{ old('category_id', $article->category_id) == $id ? 'checked' : ''}}>
+                                <input class="form-check-input" id="category_{{ $id }}" type="radio" name="category_id" value="{{ $id }}"  {{ old('category_id', $article->category_id) == $id ? 'checked' : ''}}>
+                                <label class="form-check-label mr-5" for="category_{{ $id }}">{{ $category }}</label>
                                 @endforeach
                             </div>
                             <span class="text-danger d-inline-block">
