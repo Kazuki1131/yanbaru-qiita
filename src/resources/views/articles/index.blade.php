@@ -14,7 +14,7 @@
                         <!-- ログインしているユーザーのみ編集と削除ボタンを表示 -->
                         @if($user_id == $article->user->id)
                             <span class="float-right">
-                                <a href="#" class="btn btn-secondary rounded-pill">
+                                <a href="{{ route('articles.edit', ['article' => $article]) }}" class="btn btn-secondary rounded-pill">
                                     <i class="far fa-edit mr-1"></i>編集
                                 </a>
                                 <a href="#" class="btn btn-danger rounded-pill">
