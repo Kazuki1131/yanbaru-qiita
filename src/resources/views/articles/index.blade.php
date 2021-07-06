@@ -34,7 +34,7 @@
                         </dl>
                         <dl class="row mb-4">
                             <dt class="col-4 text-right">URL</dt>
-                            <dd class="col-8"><a href="{{$article->url}}" target="_blank" rel="noopener">{{ $article->url }}</a></dd>
+                            <dd class="col-8"><a href="{{ $article->url }}" target="_blank" rel="noopener">{{ $article->url }}</a></dd>
                         </dl>
                         <dl class="row mb-4">
                             <dt class="col-4 text-right">投稿日時</dt>
