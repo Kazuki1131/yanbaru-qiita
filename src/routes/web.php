@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'ArticlesController@index')->name('top');
 
 Auth::routes();
 

@@ -29,7 +29,7 @@
                             <div class="form-check form-check-inline">
                                 @foreach ($categories as $id => $category)
                                 <input class="form-check-input" id="category_{{ $id }}" type="radio" name="category_id" value="{{ $id }}"  {{ old('category_id', $article->category_id) == $id ? 'checked' : ''}}>
-                                <label class="form-check-label mr-5" for="category_{{ $id }}">{{ $category }}</label>
+                                <label class="form-check-label mr-2 mr-lg-4" for="category_{{ $id }}">{{ $category }}</label>
                                 @endforeach
                             </div>
                             <span class="text-danger d-inline-block">
