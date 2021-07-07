@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Article;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ArticleRequest;
 
 class ArticlesController extends Controller
 {
@@ -21,6 +22,11 @@ class ArticlesController extends Controller
     public function create()
     {
         return view('articles.create');
+    }
+
+    public function store(ArticleRequest $request)
+    {
+        return redirect()->route('top');
     }
 
     public function show(Article $article)
