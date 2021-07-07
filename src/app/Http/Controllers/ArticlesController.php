@@ -24,8 +24,11 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function store(ArticleRequest $request)
+    public function store(ArticleRequest $request, Article $article)
     {
+        $article->user_id = Auth::id();
+        $article->fill($request->all());
+        $article->save();
         return redirect()->route('top');
     }
 
