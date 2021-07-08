@@ -41,6 +41,14 @@ class ArticlesController extends Controller
     {
         $article->fill($request->all())->save();
         return redirect('/');
+    }
+
+    public function destroy($id)
+    {
+        $article = Article::find($id);
+        $this->authorize('delete', $article);
+        $article->delete();
+        return redirect('/')->with('flash_message', '記事を削除しました');
 
     }
 }
