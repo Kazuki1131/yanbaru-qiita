@@ -15,9 +15,8 @@ class ArticlesController extends Controller
     {
         //記事を5件ずつcreated_atカラムに対して降順で取得
         $articles = Article::orderBy('created_at', 'desc')->paginate(5);
-        //現在認証しているユーザーのIDを取得
-        $user_id = Auth::user()->id;
-        return view('articles.index', compact('articles', 'user_id'));
+
+        return view('articles.index', compact('articles'));
     }
 
     public function create()
