@@ -24,10 +24,20 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:49',
+            'title' => 'required|string|max:50',
             'category_id' => 'required|string|max:1',
             'summary' => 'required|string|min:30',
             'url' => 'required|url',
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'title' => 'タイトル',
+            'category_id' => 'カテゴリー',
+            'summary' => '記事概要',
+            'url' => 'URL',
         ];
     }
 }

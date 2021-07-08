@@ -10,17 +10,17 @@
         </div>
         <div class="card-body mx-auto w-75">
             <p class="text-center h5"><span class="text-danger">(※)</span>は入力必須項目です。</p>
-            <form action="/articles/create" method="POST">
+            <form action="{{ route('articles.store') }}" method="POST">
                 @csrf
                 <div class="form-group mt-4">
                     <label for="title">
                         <h4>記事タイトル<span class="text-danger">(※)</span></h4>
                     </label>
                     <input type="text" class="form-control form-control-lg" id="title"
-                    name="title" maxlength="49" placeholder="記事タイトル" value="{{ old('title') }}" autofocus>
+                    name="title" maxlength="50" placeholder="記事タイトル" value="{{ old('title') }}" autofocus>
                     <p class="form-text text-muted mb-0">50文字以内で入力してください。</p>
                     @error('title')
-                        <p class="text-danger">タイトルを50文字以内で入力してください。</p>
+                        <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group mt-4 mb-0">
@@ -49,7 +49,7 @@
                     <label for="web" class="form-check-label">WEB基礎</label>
                 </div>
                 @error('category_id')
-                    <p class="text-danger">カテゴリーを指定してください。</p>
+                    <p class="text-danger">{{ $message }}</p>
                 @enderror
                 <div class="form-group mt-4">
                     <label for="summary">
@@ -59,7 +59,7 @@
                     minlength="30" placeholder="記事概要" rows="8">{{ old('summary') }}</textarea>
                     <p class="form-text text-muted mb-0">30文字以上で入力してください。</p>
                     @error('summary')
-                        <p class="text-danger">記事概要は30文字以上入力してください。</p>
+                        <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group mt-4">
@@ -70,11 +70,11 @@
                     value="{{ old('url') }}" placeholder="記事URL">
                     <p class="form-text text-muted mb-0">Qiitaの記事のURLを入力してください。</p>
                     @error('url')
-                        <p class="text-danger">有効なURLを指定してください。</p>
+                        <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <button type="submit" class="btn btn-success btn-lg d-block mx-auto mt-4">投稿する</button>
-                <a href="{{ route('top') }">
+                <a href="{{ route('top') }}">
                     <button type="button" class="btn btn-secondary btn-lg d-block mx-auto mt-3">　戻る　</button>
                 </a>
             </form>
