@@ -12,7 +12,7 @@
                         <i class="fas fa-user-edit m-2 font-weight-bold"></i>
                         <p class="d-inline font-weight-bold">{{ $article->user->name }}</p>
                         <!-- ログインしているユーザーのみ編集と削除ボタンを表示 -->
-                        @if($user_id == $article->user->id)
+                        @if(Auth::id() == $article->user->id)
                             <span class="float-right d-flex">
                                 <a href="{{ route('articles.edit', ['article' => $article]) }}" class="btn btn-secondary rounded-pill">
                                     <i class="far fa-edit mr-1"></i>編集
