@@ -12,18 +12,18 @@
                         <i class="fas fa-user-edit m-2 font-weight-bold"></i>
                         <p class="d-inline font-weight-bold">{{ $article->user->name }}</p>
                         <!-- ログインしているユーザーのみ編集と削除ボタンを表示 -->
-                        @auth
-                            @if(Auth::id() === $article->user->id)
-                                <span class="float-right">
-                                    <a href="{{ route('articles.edit', ['article' => $article]) }}" class="btn btn-secondary rounded-pill">
-                                        <i class="far fa-edit mr-1"></i>編集
-                                    </a>
-                                    <a href="#" class="btn btn-danger rounded-pill">
-                                        <i class="far fa-trash-alt mr-1"></i>削除
-                                    </a>
-                                </span>
-                            @endif
-                        @endauth
+                        @if(Auth::id() == $article->user->id)
+                            <span class="float-right d-flex">
+                                <a href="{{ route('articles.edit', ['article' => $article]) }}" class="btn btn-secondary rounded-pill">
+                                    <i class="far fa-edit mr-1"></i>編集
+                                </a>
+                                <form name="deleteform" method="POST" action="{{ route('articles.destroy', $article->id) }}">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger rounded-pill" onClick="return Check()"><i class="far fa-trash-alt mr-1"></i>削除</button>
+                                </form>
+                            </span>
+                        @endif
                     </div>
                     <div class="card-body h5">
                         <dl class="row mb-4">
