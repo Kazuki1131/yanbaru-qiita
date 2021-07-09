@@ -33,8 +33,8 @@ class ArticlesTableSeeder extends Seeder
             'user_id' => 3,
             'title' => '絶対に失敗しないDockerでLaravel+Vueの実行環境（LEMP環境）を構築する方法〜前編〜',
             'category_id' => 3,
-            'summary' => 'https://qiita.com/shimotaroo/items/29f7878b01ee4b99b951',
-            'url' => 'DockerでLaravel+Vueの実行環境を構築する方法が載っている記事になります',
+            'summary' => 'DockerでLaravel+Vueの実行環境を構築する方法が載っている記事になります',
+            'url' => 'https://qiita.com/shimotaroo/items/29f7878b01ee4b99b951',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
