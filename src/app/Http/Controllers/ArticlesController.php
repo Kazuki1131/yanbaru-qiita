@@ -7,8 +7,6 @@ use App\Http\Requests\ArticleRequest;
 use App\Article;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\ArticleRequest;
-
 
 class ArticlesController extends Controller
 {

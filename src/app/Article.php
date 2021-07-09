@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     //複数代入時のホワイトリストを定義
-    protected $fillable = ['user_id', 'title', 'category_id', 'summary','url'];
+    protected $fillable = ['user_id', 'title', 'category_id', 'summary', 'url'];
     
     public function user()
     {
