@@ -3,12 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
 {
-    //複数代入時のホワイトリストを定義
+    use SoftDeletes;
+
     protected $fillable = ['user_id', 'title', 'category_id', 'summary', 'url'];
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);

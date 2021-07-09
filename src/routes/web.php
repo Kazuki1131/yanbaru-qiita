@@ -26,5 +26,5 @@ Route::resource('articles', 'ArticlesController', ['only' => ['show']]);
 Route::get('user', 'UsersController@show');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('articles', 'ArticlesController', ['only' => ['edit', 'update']]);
+    Route::resource('articles', 'ArticlesController', ['only' => ['edit', 'update', 'destroy']]);
 });
