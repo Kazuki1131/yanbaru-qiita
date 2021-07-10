@@ -17,7 +17,7 @@ class Csv extends Model
                     'articles.url',
                     'articles.created_at',
                 )
-            ->leftJoin('users AS u', 'articles.user_id','=','u.id')
+            ->leftJoin('users AS u', 'articles.user_id', '=', 'u.id')
             ->whereNull('deleted_at')
             ->orderBy('articles.created_at', 'desc')
             ->get();

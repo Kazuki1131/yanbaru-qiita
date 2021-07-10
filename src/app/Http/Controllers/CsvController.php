@@ -35,7 +35,7 @@ class CsvController extends Controller
             }
             fclose($stream);
         });
-        $response->headers->set('Content-Type', 'application/octet-stream');
+        $response->headers->set('Content-Type', 'text/csv');
         $response->headers->set('content-disposition', 'attachment; filename=yanbaru_qiita.csv');
 
         return $response;
