@@ -41,7 +41,7 @@
                 <a href="/" class="d-inline-block btn btn-secondary">戻る</a>
                 @auth
                     @if(Auth::id() === $article->user->id)
-                        <a href="#" class="d-inline-block btn btn-success"><i class="far fa-edit mr-1"></i>編集</a>
+                        <a href="{{ route('articles.edit', ['article' => $article]) }}" class="d-inline-block btn btn-success"><i class="far fa-edit mr-1"></i>編集</a>
                         <form name="deleteform" method="POST" action="{{ route('articles.destroy', $article->id) }}">
                             @method('delete')
                             @csrf

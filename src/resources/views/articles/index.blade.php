@@ -42,7 +42,7 @@
                             <dt class="col-4 text-right">投稿日時</dt>
                             <dd class="col-8">{{ $article->created_at }}</dd>
                         </dl>
-                        <a href="#" class="btn btn-success d-block w-50 mx-auto">詳細を見る</a>
+                        <a href="{{ route('articles.show', ['article' => $article]) }}" class="btn btn-success d-block w-50 mx-auto">詳細を見る</a>
                     </div>
                 </div>
             </div>
