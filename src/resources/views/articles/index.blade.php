@@ -4,6 +4,14 @@
 
 @section('content')
 <div class="container">
+    @if ($articles->count())
+        <div class="row justify-content-end">
+            <form id='csvform' action="{{ route('csv.export') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-primary px-3 mr-5 "><i class="fas fa-download mr-2"></i>CSVダウンロード</button>
+            </form>
+        </div>
+    @endif
     <div class="row">
         @foreach($articles as $article)
             <div class="col-md-6">
