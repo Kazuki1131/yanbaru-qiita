@@ -11,17 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'ArticlesController@index')->name('top');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/articles/create', function () {
-    return view('articles/create');
-});
+Route::get('/articles/create', 'ArticlesController@create')->name('articles.create');
 
+Route::post('/articles/create', 'ArticlesController@store')->name('articles.store');
+
+Route::resource('articles', 'ArticlesController', ['only' => ['show']]);
 
 Route::get('user', 'UsersController@show');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('articles', 'ArticlesController', ['only' => ['edit', 'update', 'destroy']]);
+});
