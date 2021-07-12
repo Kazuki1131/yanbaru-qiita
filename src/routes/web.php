@@ -28,3 +28,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('user', 'UsersController@show');
 Route::resource('user', 'UsersController', ['only' => ['index']]);
+Route::post('/csv/export', 'CsvController@csvExport')->name('csv.export');
