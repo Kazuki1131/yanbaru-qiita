@@ -42,7 +42,11 @@
                 @auth
                     @if(Auth::id() === $article->user->id)
                         <a href="{{ route('articles.edit', ['article' => $article]) }}" class="d-inline-block btn btn-success"><i class="far fa-edit mr-1"></i>編集</a>
-                        <a href="#" class="d-inline-block btn btn-danger"><i class="far fa-trash-alt mr-1"></i>削除</a>
+                        <form name="deleteform" method="POST" action="{{ route('articles.destroy', $article->id) }}">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="py-3 ml-2 btn btn-danger" onClick="return Check()"><i class="far fa-trash-alt mr-1"></i>削除</button>
+                        </form>
                     @endif
                 @endauth
             </div>

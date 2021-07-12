@@ -13,16 +13,22 @@
 
 Route::get('/', 'ArticlesController@index')->name('top');
 
+//クエリ文字列をURLパラメーターで渡すため、GETメソッドを用いる
+Route::get('/articles/search', 'ArticlesController@search')->name('articles.search');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/articles/create', 'ArticlesController@create')->name('articles.create');
 
+Route::post('/articles/create', 'ArticlesController@store')->name('articles.store');
+
 Route::resource('articles', 'ArticlesController', ['only' => ['show']]);
 
 Route::get('user', 'UsersController@show');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('articles', 'ArticlesController', ['only' => ['edit', 'update']]);
+    Route::resource('articles', 'ArticlesController', ['only' => ['edit', 'update', 'destroy']]);
 });
+

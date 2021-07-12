@@ -15,7 +15,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-pen mr-2"></i>投稿する</a>
+                        <a class="nav-link" href="{{ route('articles.create') }}"><i class="fas fa-pen mr-2"></i>投稿する</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">マイページ</a>
