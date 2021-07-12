@@ -28,7 +28,7 @@ class ArticlesController extends Controller
         $article->user_id = Auth::id();
         $article->fill($request->all());
         $article->save();
-        return redirect()->route('top');
+        return redirect()->route('top')->with('flash_message', '記事を投稿しました');
     }
 
     public function show(Article $article)
@@ -46,7 +46,7 @@ class ArticlesController extends Controller
     public function update(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all())->save();
-        return redirect('/');
+        return redirect('/')->with('flash_message', '記事を編集しました');
     }
 
     public function destroy($id)
@@ -54,7 +54,7 @@ class ArticlesController extends Controller
         $article = Article::find($id);
         $this->authorize('delete', $article);
         $article->delete();
-        return redirect('/');
+        return redirect('/')->with('flash_danger', '記事を削除しました');
 
     }
 }

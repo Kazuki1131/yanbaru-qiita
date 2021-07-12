@@ -21,14 +21,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     @yield('css')
 </head>
 <body>
 
     @yield('header')
+    
+    @include('common.flash_messages')
 
-    <main class="py-4">
+    <main class="my-5">
         @yield('content')
     </main>
 </body>
