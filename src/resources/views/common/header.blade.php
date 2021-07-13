@@ -1,5 +1,5 @@
 @section('header')
-<header>
+<header class="mb-2">
     <nav class="navbar navbar-expand-md navbar-light shadow-sm bg-success">
 
         <a class="navbar-brand text-white font-weight-bold nav-logo" href="{{ url('/') }}">Yanbaru Qiita</a>
