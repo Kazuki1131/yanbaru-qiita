@@ -57,7 +57,7 @@ class Article extends Model
         // 検索結果とページング時に検索条件を保持するための配列を値に持つ連想配列
         $searchData = [
             'articles' => $articles,
-            'retention_params' => [
+            'retentionParams' => [
                 'term' => $search['term'] ?? null,
                 'category' => $search['category'] ?? null,
                 'word' => $search['word'] ?? null,

@@ -20,7 +20,7 @@
                 <select name="term" id="term" class="form-control ml-4">
                     <option value=""></option>
                     @foreach($termRanges as $termNumber)
-                        @if($termNumber === ($retention_params['term'] ?? ''))
+                        @if($termNumber === ($retentionParams['term'] ?? ''))
                             <option value="{{ $termNumber }}" selected>{{ $termNumber }}</option>
                         @else
                             <option value="{{ $termNumber }}">{{ $termNumber }}</option>
@@ -33,7 +33,7 @@
                 <select name="category" id="category" class="form-control">
                     <option value=""></option>
                     @foreach($categories as $category)
-                        @if($category->id === ($retention_params['category'] ?? ''))
+                        @if($category->id === ($retentionParams['category'] ?? ''))
                             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                         @else
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -43,7 +43,7 @@
             </div>
             <div class="form-group form-inline">
                 <label for="word" class="mr-4 h5">フリーワード</label>
-                <input type="text" name="word" id="word" maxlength="100" class="form-control" value="{{ request()->word ?? '' }}">
+                <input type="text" name="word" id="word" maxlength="100" class="form-control" value="{{ $retentionParams['word'] ?? '' }}">
             </div>
             <button type="submit" class="btn btn-success btn-lg d-block mx-auto mt-4">検索する</button>
         </form>
@@ -102,7 +102,7 @@
     </div>
     <div class="row justify-content-center">
         <!-- クエリ文字列をURLのパラメーターとして追加 -->
-        {{ $articles->appends($retention_params ?? '')->links() }}
+        {{ $articles->appends($retentionParams ?? '')->links() }}
     </div>
 </div>
 @endsection

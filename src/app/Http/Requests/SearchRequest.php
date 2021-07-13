@@ -33,7 +33,7 @@ class SearchRequest extends FormRequest
     public function attributes()
     {
         return [
-            'term' => '期',
+            'term' => '期生',
             'category' => 'カテゴリー',
             'word' => '検索キーワード',
         ];
@@ -43,8 +43,8 @@ class SearchRequest extends FormRequest
     public function messages()
     {
         return [
-            'term.integer' => '期に不正な値が入力されました。',
-            'term.digits_between' => '期は1~20で選択してください。',
+            'term.integer' => '期生に不正な値が入力されました。',
+            'term.digits_between' => '期生は1~20で選択してください。',
             'category.integer'  => 'カテゴリーに不正な値が入力されました。',
             'category.digits'  => 'カテゴリーは選択肢の中から選んでください。',
             'word.max'  => '検索キーワードは100文字以内で入力してください。',
