@@ -13,6 +13,9 @@
 
 Route::get('/', 'ArticlesController@index')->name('top');
 
+//クエリ文字列をURLパラメーターで渡すため、GETメソッドを用いる
+Route::get('/articles/search', 'ArticlesController@search')->name('articles.search');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

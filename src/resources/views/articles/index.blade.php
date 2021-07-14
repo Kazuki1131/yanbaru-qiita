@@ -4,6 +4,50 @@
 
 @section('content')
 <div class="container">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <div class="row justify-content-center my-4">
+        <form action="{{ route('articles.search') }}">
+            <div class="form-group form-inline">
+                <label for="term" class="mx-4 pr-4 h5">期生</label>
+                <select name="term" id="term" class="form-control ml-4">
+                    <option value=""></option>
+                    @foreach($termRanges as $termNumber)
+                        @if($termNumber === ($retentionParams['term'] ?? ''))
+                            <option value="{{ $termNumber }}" selected>{{ $termNumber }}</option>
+                        @else
+                            <option value="{{ $termNumber }}">{{ $termNumber }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group form-inline">
+                <label for="category" class="mr-4 pr-3 h5">カテゴリー</label>
+                <select name="category" id="category" class="form-control">
+                    <option value=""></option>
+                    @foreach($categories as $category)
+                        @if($category->id === ($retentionParams['category'] ?? ''))
+                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                        @else
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group form-inline">
+                <label for="word" class="mr-4 h5">フリーワード</label>
+                <input type="text" name="word" id="word" maxlength="100" class="form-control" value="{{ $retentionParams['word'] ?? '' }}">
+            </div>
+            <button type="submit" class="btn btn-success btn-lg d-block mx-auto mt-4">検索する</button>
+        </form>
+    </div>
     @if ($articles->count())
         <div class="row justify-content-end">
             <form id='csvform' action="{{ route('csv.export') }}" method="POST">
@@ -57,7 +101,8 @@
         @endforeach
     </div>
     <div class="row justify-content-center">
-        {{ $articles->links('pagination::bootstrap-4') }}
+        <!-- クエリ文字列をURLのパラメーターとして追加 -->
+        {{ $articles->appends($retentionParams ?? '')->links() }}
     </div>
 </div>
 @endsection
