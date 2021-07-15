@@ -14,25 +14,25 @@
         <div class="card-body pt-2 pb-5">
             <dl class="row justify-content-center">
                 <dt>名前</dt>
-                <dd>{{ $auth->name }}</dd>
+                <dd>{{ auth()->user()->name}}</dd>
             </dl>
             <dl class="row justify-content-center">
                 <dt>期生</dt>
-                <dd>{{ $auth->term }}期生</dd>
+                <dd>{{ auth()->user()->term }}期生</dd>
             </dl>
             <dl class="row justify-content-center">
                 <dt>メールアドレス</dt>
-                <dd>{{ $auth->email }}</dd>
+                <dd>{{ auth()->user()->email }}</dd>
             </dl>
             <div class="row justify-content-center">
-                <a class="px-4 btn btn-secondary" href="javascript:history.back()">戻る</a>
-                <a class="px-4 ml-2 btn btn-success" href="#">編集</a>
+                <a class="px-4 btn btn-secondary" href="{{ route('top') }}">戻る</a>
+                <a class=" px-4 ml-2 btn btn-success" href="#">編集</a>
             </div>
         </div>
     </div>
     <h3 div class="row justify-content-center mt-5">自分の投稿</h3>
 
-    @foreach ($articles as $article)
+    @foreach (auth()->user()->articles as $article)
     <div class="card user-show w-50 mx-auto mb-5">
         <div class="card-header">
             <div class="d-flex align-items-center">
@@ -43,7 +43,7 @@
                     <form name="deleteform" method="POST" action="{{ route('articles.destroy', $article->id) }}"></form>
                     @method('delete')
                     @csrf
-                    <button type="submit" class=" px-2 btn btn-danger " onClick="return Check()">削除</form>
+                    <button type="submit" class=" px-2 btn btn-danger " onClick="return Check()">削除</button>
                 </div>
             </div>
         </div>
