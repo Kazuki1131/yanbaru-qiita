@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 use App\Article;
 use App\Category;
+use App\Comment;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SearchRequest;
 
@@ -35,7 +36,8 @@ class ArticlesController extends Controller
 
     public function show(Article $article)
     {
-        return view('articles.show', compact('article'));
+        $comments = $article->comments;
+        return view('articles.show', compact('article', 'comments'));
     }
 
     public function edit(Article $article, Category $category)
