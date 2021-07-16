@@ -26,9 +26,9 @@ Route::post('/articles/create', 'ArticlesController@store')->name('articles.stor
 
 Route::resource('articles', 'ArticlesController', ['only' => ['show']]);
 
-Route::get('user', 'UsersController@show');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('articles', 'ArticlesController', ['only' => ['edit', 'update', 'destroy']]);
 });
+Route::get('user', 'UsersController@show')->name('user.show');
+
 Route::post('/csv/export', 'CsvController@csvExport')->name('csv.export');

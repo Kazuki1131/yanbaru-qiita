@@ -3,12 +3,21 @@
 }
 .user-show dt {
     text-align: right;
-    width: 200px;
+    width: 40%;
+    font-family:sans-serif;
 }
 .user-show dd {
-    width: 300px;
+    width: 60%;
     padding: 0 40px;
 }
 .user-show-box01 .btn-box01 a {
-    border-radius:20px;
+    border-radius:10px;
+}
+.user-show form {
+    border-radius:10px;
+    display:inline-block;
+}
+.user-show button {
+    border-radius:10px;
+    display:inline-block;
 }
