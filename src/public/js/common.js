@@ -6,3 +6,11 @@ function Check(){
         return false;
     }
 }
+function CheckComment(){
+    let checked = confirm("コメントを削除してもよろしいですか？");
+    if (checked) {
+        return true;
+    } else {
+        return false;
+    }
+}
