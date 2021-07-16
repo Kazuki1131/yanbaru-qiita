@@ -21,7 +21,25 @@
 .article-show .show-btn a:nth-child(n + 2) {
     margin-left: 15px;
 }
+.show-comment {
+    margin: 0 auto;
+    width: 700px;
+    max-width: 100%;
+}
+.comment-items {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
+.delete-comment {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
 @media only screen and (max-width: 960px) {
     .article-show .card-body {
         padding: 0 60px;

@@ -20,6 +20,11 @@ class Article extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('created_at', 'DESC');
+    }
 
     public function searchRange()
     {
