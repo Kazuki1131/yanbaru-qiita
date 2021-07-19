@@ -14,7 +14,7 @@
         <div class="card-body pt-2 pb-5">
             <dl class="row justify-content-center">
                 <dt>名前</dt>
-                <dd>{{ auth()->user()->name}}</dd>
+                <dd>{{ auth()->user()->name }}</dd>
             </dl>
             <dl class="row justify-content-center">
                 <dt>期生</dt>
@@ -26,7 +26,7 @@
             </dl>
             <div class="row justify-content-center">
                 <a class="px-4 btn btn-secondary" href="{{ route('top') }}">戻る</a>
-                <a class="px-4 ml-2 btn btn-success" href="#">編集</a>
+                <a class="px-4 ml-2 btn btn-success" href="{{ route('user.edit', Auth::user()) }}">編集</a>
             </div>
         </div>
     </div>
