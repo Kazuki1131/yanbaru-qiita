@@ -36,7 +36,7 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => '名前',
-            'term' => '期数',
+            'term' => '期生',
             'email' => 'メールアドレス',
         ];
     }

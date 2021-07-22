@@ -66,7 +66,7 @@
               <button type="submit" class="btn btn-success col-md-4 py-2 mt-5">更新する</button>
             </div>
             <div class="row justify-content-center mb-2">
-              <a class='btn btn-secondary text-white col-md-4 py-2 mb-4' href="{{ route('top') }}">戻る</a>
+              <a class='btn btn-secondary text-white col-md-4 py-2 mb-4' href="{{ route('user.show') }}">戻る</a>
             </div>
           </form>
         </div>
